@@ -1,6 +1,7 @@
 <?php
 $email_error = "";
 $pw_error = "";
+$sugu_error = "";
 	// kontrolli ainult kui vajutatakse submit
 	if($_SERVER["REQUEST_METHOD"]  == "POST"){
 			
@@ -20,8 +21,9 @@ $pw_error = "";
 			//kontrollime pikkust
 			if(strlen($_POST["password"] <= 8)){
 				$pw_error = "peab olema vähemalt 8 sümbolit pikk";
-	}
+			}
 		}
+	}
 ?>
 
 
@@ -36,24 +38,21 @@ $pw_error = "";
 	</head>
 
 	<body>
-			<h2>Login</h2>
-				<form action="teine_osa.php" method="post">
-				<input name="email" type="email" placeholder="@example.com" > <?php echo $email_error;?> <br>
-				<br>
-				<input name="password" type="password" placeholder="Swigedy Swag" > <?php echo $pw_error;?>
-				<br>
-				<br>
-				<input type="submit" value="Log In">
-			</form>	
-
 			
 		<h2>Create user</h2>
 			<form action="teine_osa.php" method="post">
 				<input name="email" type="email" placeholder="@example.com" > <?php echo $email_error;?> <br>
 				<br>
-				<input name="password" type="password" placeholder="Swigedy Swag" > <?php echo $pw_error;?>
-				<br>
-				<br>
+				<input name="password" type="password" placeholder="Parool" > <?php echo $pw_error;?>
+				<br><br>
+				<input name="Sugu" type="text" placeholder="M/N" > <?php echo $sugu_error;?>
+				<br><br>
+				<input name="Eesnimi" type="text" placeholder="John" >
+				<br><br>
+				<input name="Perekonnanimi" type="text" placeholder="Doe" >
+				<br><br>
+				<input name="Elukoht" type="text" placeholder="Harjumaa" >
+				<br><br>
 				<input type="submit" value="Log In">
 			</form>	
 		
