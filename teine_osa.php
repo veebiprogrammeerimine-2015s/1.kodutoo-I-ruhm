@@ -5,7 +5,7 @@ $sugu_error = "";
 	// kontrolli ainult kui vajutatakse submit
 	if($_SERVER["REQUEST_METHOD"]  == "POST"){
 			
-	//kontrollime eposti et poleks tühi
+	//kontrollime eposti et poleks tÃ¼hi
 	
 			if(empty($_POST["email"])){
 		$email_error = "Gibe email please";
@@ -20,7 +20,7 @@ $sugu_error = "";
 			
 			//kontrollime pikkust
 			if(strlen($_POST["password"] <= 8)){
-				$pw_error = "peab olema vähemalt 8 sümbolit pikk";
+				$pw_error = "peab olema vÃ¤hemalt 8 sÃ¼mbolit pikk";
 			}
 		}
 	}
@@ -45,13 +45,19 @@ $sugu_error = "";
 				<br>
 				<input name="password" type="password" placeholder="Parool" > <?php echo $pw_error;?>
 				<br><br>
-				<input name="Sugu" type="text" placeholder="M/N" > <?php echo $sugu_error;?>
+				<!--<input name="Sugu" type="text" placeholder="M/N" >-->
+				
+				<select name="Sugu" style="width:173px;"> 
+					<option value="0">mees</option> 
+					<option value="1">naine</option>  
+				</select> <?php echo $sugu_error;?> 
+				
 				<br><br>
-				<input name="Eesnimi" type="text" placeholder="John" >
+				<input name="Eesnimi" type="text" placeholder="example: John" >
 				<br><br>
-				<input name="Perekonnanimi" type="text" placeholder="Doe" >
+				<input name="Perekonnanimi" type="text" placeholder="example: Doe" >
 				<br><br>
-				<input name="Elukoht" type="text" placeholder="Harjumaa" >
+				<input name="Elukoht" type="text" placeholder="example: Harjumaa" >
 				<br><br>
 				<input type="submit" value="Log In">
 			</form>	
