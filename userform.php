@@ -14,14 +14,18 @@
 	$password_error = "";
 	
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	//Kontrolli kasutaja e-posti ja parooli, et see poleks tühi
-		if (empty($_POST["email"])) {
-			$email_error = "Palun sisesta e-posti aadress!";
-		
-		}	
-		if (empty($_POST["password"])) {
-			$password_error = "Palun sisesta parool!";
-		
+		//isset uurib kas muutuja on loodud ning ega poleks olematu/kehtetu
+		//Uurib, mis nuppu on vajutatud, antul juhul logi sisse
+		if (isset($_POST["btnlogin"])) {
+		//Kontrolli kasutaja e-posti ja parooli, et see poleks tühi
+			if (empty($_POST["email"])) {
+				$email_error = "Palun sisesta e-posti aadress!";
+			
+			}	
+			if (empty($_POST["password"])) {
+				$password_error = "Palun sisesta parool!";
+			
+			}
 		}
 	}
 	
@@ -33,7 +37,7 @@
 	$reg_password_repeat_error = "";
 
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
+		if (isset($_POST["btnregister"])) {
 			//Kontrolli kasutaja e-posti ja parooli, et see poleks tühi
 			if (empty($_POST["reg_email"])) {
 				$reg_email_error = "Palun sisesta e-posti aadress!";
@@ -48,7 +52,7 @@
 				
 			}
 		}
-	
+	}
 	
 	
 
@@ -70,7 +74,7 @@
 				<input name="email" type="email" placeholder="E-post"> <?php echo $email_error; ?><br><br>
 				<input name="password" type="password" placeholder="Parool"> <?php echo $password_error; ?><br><br>
 				
-				<input type="submit" value="Logi sisse">
+				<input type="submit" name="btnlogin" value="Logi sisse">
 			</form>
 		</div>
 		
@@ -82,7 +86,7 @@
 				<input name="reg_password" type="password" placeholder="Parool"> <?php echo $reg_password_error; ?><br><br>
 				<input name="reg_password_repeat" type="password" placeholder="Korda parooli"> <?php echo $reg_password_repeat_error; ?><br><br>
 				
-				<input type="submit" value="Registreeru">
+				<input type="submit" name="btnregister" value="Registreeru">
 			</form>
 		</div>
 		
