@@ -78,9 +78,8 @@ $gender_error = "";
 				<p>Password</p>
 				<input name="password" type="password" placeholder="Password" > <?php echo $pw_error;?>
 				<br><br>
-				
 				<input type="submit" value="Log In">
-				
+				<p> Üldine siis mõte oli teha veebileht umbkaudu Twitteri stiilis. Sellest tulenevalt ka loginscreeni hetke kujundus. Kuid sammuti on mul veel valikus teha vanemate firmale koduleht mis oleks kõik ühel veebilehel ja erinevad sektsioonid on üksteise all.
 			</form>	
 			</div>
 	</body>
