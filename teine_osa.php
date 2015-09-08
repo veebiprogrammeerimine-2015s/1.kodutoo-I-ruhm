@@ -8,19 +8,19 @@ $gender_error = "";
 	//kontrollime eposti et poleks tühi
 	
 			if(empty($_POST["email"])){
-		$email_error = "Sisestage e-mail";
+		$email_error = "Insert e-mail";
 		}
 	}
 	
 	if($_SERVER["REQUEST_METHOD"]  == "POST"){
 
 		if(empty($_POST["password"])){
-			$pw_error = "Sisestage parool";
+			$pw_error = "Insert password";
 		} else {
 			
 			//kontrollime pikkust
 			if(strlen($_POST["password"] <= 8)){
-				$pw_error = "peab olema vähemalt 8 sümbolit pikk";
+				$pw_error = "Has to be atleast 8 characters";
 			}
 		}
 	}
@@ -56,13 +56,13 @@ $gender_error = "";
 				</select> <?php echo $gender_error;?> 
 				<br>
 				<p>First name</p>
-				<input name="Eesnimi" type="text" placeholder="example: John" >
+				<input name="First name" type="text" placeholder="example: John" >
 				<br>
 				<p>Last name</p>
-				<input name="Perekonnanimi" type="text" placeholder="example: Doe" >
+				<input name="Last name" type="text" placeholder="example: Doe" >
 				<br>
 				<p>Address</p>
-				<input name="Elukoht" type="text" placeholder="example: Harjumaa" >
+				<input name="Address" type="text" placeholder="example: Harjumaa" >
 				<br><br>
 				
 				<input type="submit" value="Create User">
@@ -76,7 +76,7 @@ $gender_error = "";
 				<p>Email/Username</p>
 				<input name="email" type="email" placeholder="@example.com" > <?php echo $email_error;?> <br>
 				<p>Password</p>
-				<input name="password" type="password" placeholder="Parool" > <?php echo $pw_error;?>
+				<input name="password" type="password" placeholder="Password" > <?php echo $pw_error;?>
 				<br><br>
 				
 				<input type="submit" value="Log In">
