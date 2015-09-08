@@ -70,7 +70,7 @@ $gender_error = "";
 			</form>	
 			</div>
 			<div class="center2">
-			<p style="font-size:30px", font-family:"Comic Sans";>Log In</p>
+			<p style="font-size:30px";>Log In</p>
 			<form action="teine_osa.php" method="post">
 			
 				<p>Email/Username</p>
