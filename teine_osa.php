@@ -8,14 +8,14 @@ $sugu_error = "";
 	//kontrollime eposti et poleks tühi
 	
 			if(empty($_POST["email"])){
-		$email_error = "Gibe email please";
+		$email_error = "Sisestage e-mail";
 		}
 	}
 	
 	if($_SERVER["REQUEST_METHOD"]  == "POST"){
 
 		if(empty($_POST["password"])){
-			$pw_error = "Gibe PW please";
+			$pw_error = "Sisestage parool";
 		} else {
 			
 			//kontrollime pikkust
