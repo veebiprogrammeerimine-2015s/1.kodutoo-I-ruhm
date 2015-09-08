@@ -1,7 +1,7 @@
 <?php
 $email_error = "";
 $pw_error = "";
-$sugu_error = "";
+$gender_error = "";
 	// kontrolli ainult kui vajutatakse submit
 	if($_SERVER["REQUEST_METHOD"]  == "POST"){
 			
@@ -31,7 +31,7 @@ $sugu_error = "";
 
 	<head>
 			<title>
-			Login page
+			User creation page
 		</title>
 	
 	</head>
@@ -41,29 +41,43 @@ $sugu_error = "";
 		
 			</div>
 			<div class="center">
-			<h2>Create user</h2>
+			<p style="font-size:30px";>Create user</p>
 			<form action="teine_osa.php" method="post">
 			
-				<p>Kasutajatunnus</p>
+				<p>Email/Username</p>
 				<input name="email" type="email" placeholder="@example.com" > <?php echo $email_error;?> <br>
-				<p>Parool</p>
+				<p>Password</p>
 				<input name="password" type="password" placeholder="Parool" > <?php echo $pw_error;?>
 				<br>
-				<p>Sugu</p>
-				<select name="Sugu" style="width:173px;"> 
-					<option value="0">mees</option> 
-					<option value="1">naine</option>  
-				</select> <?php echo $sugu_error;?> 
+				<p>Gender</p>
+				<select name="gender" style="width:173px;"> 
+					<option value="0">Male</option> 
+					<option value="1">Female</option>  
+				</select> <?php echo $gender_error;?> 
 				<br>
-				<p>Eesnimi</p>
+				<p>First name</p>
 				<input name="Eesnimi" type="text" placeholder="example: John" >
 				<br>
-				<p>Perekonnanimi</p>
+				<p>Last name</p>
 				<input name="Perekonnanimi" type="text" placeholder="example: Doe" >
 				<br>
-				<p>Elukoht</p>
+				<p>Address</p>
 				<input name="Elukoht" type="text" placeholder="example: Harjumaa" >
-				<br>
+				<br><br>
+				
+				<input type="submit" value="Create User">
+				
+			</form>	
+			</div>
+			<div class="center2">
+			<p style="font-size:30px", font-family:"Comic Sans";>Log In</p>
+			<form action="teine_osa.php" method="post">
+			
+				<p>Email/Username</p>
+				<input name="email" type="email" placeholder="@example.com" > <?php echo $email_error;?> <br>
+				<p>Password</p>
+				<input name="password" type="password" placeholder="Parool" > <?php echo $pw_error;?>
+				<br><br>
 				
 				<input type="submit" value="Log In">
 				

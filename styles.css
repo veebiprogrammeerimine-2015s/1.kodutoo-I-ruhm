@@ -8,8 +8,20 @@
 	 padding-left: 50;
 }
 .center {
-    margin: auto;
-    width: 30%;
-    border:3px solid #8AC007;
-    padding: 10px;
+	position:fixed;
+    left: 34%;
+    width: 14%;
+   /* border:3px solid #8AC007;*/
+    padding: 1%;
+}
+.center2 {
+    position:fixed;
+	left: 50%;
+    width: 14%;
+    /*border:3px solid blue;*/
+    padding: 1%;
+}
+
+input{
+-webkit-box-sizing : border-box;‌​
 }
