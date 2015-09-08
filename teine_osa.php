@@ -26,42 +26,49 @@ $sugu_error = "";
 	}
 ?>
 
-
+<link rel="stylesheet" href="styles.css">
 <html>
 
 	<head>
-	
-		<title>
+			<title>
 			Login page
 		</title>
 	
 	</head>
 
 	<body>
-			
-		<h2>Create user</h2>
+			<div id="header" style="border:2px solid gray">
+		
+			</div>
+			<div class="center">
+			<h2>Create user</h2>
 			<form action="teine_osa.php" method="post">
+			
+				<p>Kasutajatunnus</p>
 				<input name="email" type="email" placeholder="@example.com" > <?php echo $email_error;?> <br>
-				<br>
+				<p>Parool</p>
 				<input name="password" type="password" placeholder="Parool" > <?php echo $pw_error;?>
-				<br><br>
-				<!--<input name="Sugu" type="text" placeholder="M/N" >-->
-				
+				<br>
+				<p>Sugu</p>
 				<select name="Sugu" style="width:173px;"> 
 					<option value="0">mees</option> 
 					<option value="1">naine</option>  
 				</select> <?php echo $sugu_error;?> 
-				
-				<br><br>
+				<br>
+				<p>Eesnimi</p>
 				<input name="Eesnimi" type="text" placeholder="example: John" >
-				<br><br>
+				<br>
+				<p>Perekonnanimi</p>
 				<input name="Perekonnanimi" type="text" placeholder="example: Doe" >
-				<br><br>
+				<br>
+				<p>Elukoht</p>
 				<input name="Elukoht" type="text" placeholder="example: Harjumaa" >
-				<br><br>
+				<br>
+				
 				<input type="submit" value="Log In">
+				
 			</form>	
-		
+			</div>
 	</body>
 	
 </html>
