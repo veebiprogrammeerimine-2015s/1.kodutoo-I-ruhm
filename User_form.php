@@ -43,8 +43,8 @@
 		<form action="User_form.php" method="post">
 		
 		<input name="isikukood" type="text" placeholder="isikukood">* <?php echo $email_error; ?> <br> <br> 
-		<input name="test" type="text" placeholder="sugu"> <br> <br>
-		<input name="test1" type="text" placeholder="vanus"> <br> <br> 	
+		<input name="test" type="text" placeholder="vanus"> <br> <br>
+		<input name="test1" type="text" placeholder="sugu"> <br> <br> 	
 		
 		<input type="submit" value="logi sisse">		
 	</body>
