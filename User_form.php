@@ -14,7 +14,7 @@
 		//kontrolli ainult siis, kui kasutaja vajutab logi sisse nuppu
 		if($_SERVER["REQUEST_METHOD"] == "POST"){
 			if(empty($_POST["email"]))	{
-				$email_error = "ei saa olla tühi";
+				$email_error = "viga";
 			}	
 			if(empty($_POST["password"])) {
 				$password_error = "Teie parooli lünk on tühi";
@@ -27,7 +27,7 @@
 ?>
 <html>
 	<head>
-	 <title>User login page</title>
+	 <title>EvoGlass</title>
 	</head>
 	<body>
 	
@@ -39,11 +39,12 @@
 		
 		<input type="submit" value="logi sisse">
 		</form>
-		<h2>Create user</h2>
-	<form action="User_form.php" method="post">
+		<h2>Sign up</h2>
+		<form action="User_form.php" method="post">
 		
-		<input name="isikukood" type="isikukood" placeholder="isikukood">* <?php echo $email_error; ?> <br> <br> 
-		<input name="isikukood" type="vanus" placeholder="vanus">	
+		<input name="isikukood" type="text" placeholder="isikukood">* <?php echo $email_error; ?> <br> <br> 
+		<input name="test" type="text" placeholder="sugu"> <br> <br>
+		<input name="test1" type="text" placeholder="vanus"> <br> <br> 	
 		
 		<input type="submit" value="logi sisse">		
 	</body>
