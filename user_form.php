@@ -1,29 +1,46 @@
 <?php
-	$viga = '';
-	if($_SERVER['REQUEST_METHOD'] == 'POST'){
-		if (empty($_GET['email']) ,$_GET['parool']))
-		{
-			echo $_GET['email'].'<br>'.$_GET['parool'];
-		} else {
-			$viga = 'Vale parool või kasutaja';
-		}
+	$emailErr = $passwordErr = "";
+	$email = $password = "";
+
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+		 if (empty($_POST["email"])) {
+			 $emailErr = "E-mail is required";
+		 } else {
+			 $email = $_POST["email"];
+		 }
+		 if (empty($_POST["password"])) {
+			 $passwordErr = "Password is required";
+		 } else {
+			 if (strlen($_POST["password"]) < 8) {
+				 $passwordErr = "Password must be > 8 characters";
+			 } else {
+				 $password = $_POST["password"];
+			 }
+		 }
 	}
-	
+
 ?>
+
+<!DOCTYPE HTML>
 <html>
 	<head>
 		<title> User login page </title>
 	</head>
 	<body>
-	
+
 		<h2>Login</h2>
-		<form method="get" action="user_form.php">
-			<input type="email" placeholder="E-post" name="email"><br><br>
-			<input type="password" placeholder="Parool" name="parool"><br><br>
-			<input type="submit" value="Logi sisse">
+		<p><span>* required field.</span></p>
+		<form method="post">
+		   <input type="email" name="email" placeholder="E-mail" value="<?php echo $email;?>">
+		   <span>* <?php echo $emailErr;?></span>
+		   <br><br>
+		   <input type="password" name="password" placeholder="Password" value="<?php echo $password;?>">
+		   <span class="error">* <?php echo $passwordErr;?></span>
+		   <br><br>
+		   <input type="submit" name="submit" value="Submit">
 		</form>
-		<?php echo $viga; ?>
+
 		<h2>Create user</h2>
-	
+
 	</body>
 </html>
