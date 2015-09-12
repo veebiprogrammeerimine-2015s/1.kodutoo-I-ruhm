@@ -47,14 +47,14 @@
 		<h2>Login</h2>
 		<form action="user_form.php" method="post">
 			<input name="email" type="email" placeholder="E-post">* <?php echo $email_error; ?><br> <br>
-			<input name="password" type="password" placeholder="parool">*<br> <br> <?php echo $password_error; ?>
+			<input name="password" type="password" placeholder="parool">*<br> <br> <?php echo $password_error; ?> <br> <br>
+
+			<textarea name="comment" rows="10" cols="30" placeholder="comment">Kasutasin mõne rea puhul näidete abi. Suuremaks tööks olen mõelnud trennipäeviku koostamist.</textarea>*<br> <br> <?php echo $comment_error; ?> 
 			
-			<textarea name="comment" rows="4" cols="30" placeholder="comment"></textarea>*<br> <br> <?php echo $comment_error; ?> 
-			<form>
-			<input type="checkbox" name="vehicle1" value="Bike"> I have a bike
+			<input type="checkbox" name="option1" value="o1"> Sain kodutööst aru.
 			<br>
-			<input type="checkbox" name="vehicle2" value="Car"> I have a car 
-			</form>
+			<input type="checkbox" name="option2" value="o2"> Oskasin selle ka üles laadida. 
+			<br>
 
 			<input type="submit" value="logi sisse"> 
 		</form>
