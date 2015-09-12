@@ -1,6 +1,6 @@
 <?php
 	$emailErr = $passwordErr = "";
-	$name = $email = $password = $gender = "";
+	$name = $email = $password = $gender = $success = "";
 
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		 if (empty($_POST["email"])) {
@@ -25,6 +25,10 @@
 		 }
 		 if (!empty($_POST["gender"])) {
 			 $gender = $_POST["gender"];
+		 }
+		 // If no password or email errors return success message
+		 if (!strcmp($emailErr, $passwordErr)) {
+			 $success = "Succesfully registered!";
 		 }
 	}
 ?>
@@ -56,7 +60,10 @@
 			 <br><br>
 		   <input type="submit" name="submit" value="Submit">
 		</form>
+		<br>
 		<a href="user_form.php">Login</a>
+		<br>
+		<?php echo '<h2>'.$success.'</h2>'?>
 
 	</body>
 </html>

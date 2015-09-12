@@ -1,6 +1,6 @@
 <?php
 	$emailErr = $passwordErr = "";
-	$email = $password = "";
+	$email = $password = $success = "";
 
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		 if (empty($_POST["email"])) {
@@ -16,6 +16,10 @@
 			 } else {
 				 $password = $_POST["password"];
 			 }
+		 }
+		 // If no password or email errors return success message
+		 if (!strcmp($emailErr, $passwordErr)) {
+			 $success = "Succesfully logged in!";
 		 }
 	}
 ?>
@@ -38,7 +42,9 @@
 		   <br><br>
 		   <input type="submit" name="submit" value="Submit">
 		</form>
+		<br>
 		<a href="register_form.php">Register</a>
-
+		<br>
+		<?php echo '<h2>'.$success.'</h2>'?>
 	</body>
 </html>
