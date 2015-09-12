@@ -51,7 +51,7 @@
 
 			<input name="comment" type="text" placeholder="comment">* <?php echo $comment_error; ?> <br> <br> 
 			<textarea name="comment1" type="text" cols= "40" rows= "5" placeholder="see võib tühi ka olla"></textarea> <br> <br>
-			
+			<textarea name="comment2" type="text" cols= "60" rows= "5"> Enda tööks planeerin trennipäeviku koostamise. Tegemist võiks olla sellise asjaga, kuhu inimene kirjutab, et mis päevadel ja mida ta täpselt tegi. Andmete põhjal saaks siis teha erinevaid arvutusi ja järeldusi.</textarea> <br> <br>
 			<input name="option1" type="checkbox" value="o1"> Sain aru.
 			<br>
 			<input name="option2" type="checkbox" value="o2"> Oskasin laadida githubi. 
