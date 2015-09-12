@@ -50,11 +50,11 @@
 <?php echo $password_error; ?> <br> <br>
 
 			<input name="comment" type="text" placeholder="comment">* <?php echo $comment_error; ?> <br> <br> 
-			<input name="comment" type="text" placeholder="see võib tühi ka olla"> <br> <br>
+			<textarea name="comment1" type="text" cols= "40" rows= "5" placeholder="see võib tühi ka olla"></textarea> <br> <br>
 			
-			<input type="checkbox" name="option1" value="o1"> Sain aru.
+			<input name="option1" type="checkbox" value="o1"> Sain aru.
 			<br>
-			<input type="checkbox" name="option2" value="o2"> Oskasin laadida githubi. 
+			<input name="option2" type="checkbox" value="o2"> Oskasin laadida githubi. 
 			<br>
 
 			<input type="submit" value="logi sisse"> 
