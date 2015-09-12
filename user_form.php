@@ -49,7 +49,8 @@
 			<input name="password" type="password" placeholder="parool">*
 <?php echo $password_error; ?> <br> <br>
 
-			<input name="comment" type="textarea" rows="10" cols="30" placeholder="comment"> </textarea>*<br> <br> <?php echo $comment_error; ?> 
+			<input name="comment" type="text" placeholder="comment">* <?php echo $comment_error; ?> <br> <br> 
+			<input name="comment" type="text" placeholder="see võib tühi ka olla"> <br> <br>
 			
 			<input type="checkbox" name="option1" value="o1"> Sain aru.
 			<br>
