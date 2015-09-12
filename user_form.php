@@ -18,7 +18,6 @@
 			 }
 		 }
 	}
-
 ?>
 
 <!DOCTYPE HTML>
@@ -39,8 +38,7 @@
 		   <br><br>
 		   <input type="submit" name="submit" value="Submit">
 		</form>
-
-		<h2>Create user</h2>
+		<a href="register_form.php">Register</a>
 
 	</body>
 </html>
