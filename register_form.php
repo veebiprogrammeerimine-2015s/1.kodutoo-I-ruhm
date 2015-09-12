@@ -1,4 +1,15 @@
 <?php
+	/*
+		Mvp idee kirjeldus:
+
+		Luua oma kerge blogisüsteem
+		*Peab olema ehitatud OOP stiili jälgides ja kasutama SPL'i
+		*Blogil peab olema kategooria-laadne sortimine ainekoodi põhjal ($_GET('[tag]'))
+		*Blogil võiks olla kommentaarid ja kasutajad
+		*Kommenteerimiseks ei pea registreerima (OAuth implementatsioon sotsiaalvõrkudega sisselogimiseks)
+		*Blogil peab olema RSS feed
+		*Minimaalne back-end, postituste vormistamisvõimalused ja postihaldus peavad olemas olema
+	*/
 	$emailErr = $passwordErr = "";
 	$name = $email = $password = $gender = $success = "";
 
