@@ -2,7 +2,7 @@
 
 	// user_form.php
 	
-	//jutum?ide vahele input elemendi NAME
+	//jutumÃ¤rkide vahele input elemendi NAME
 	//echo $_POST["email"]; 
 	//echo $_POST["password"];
 	//echo $_POST["comment"];
@@ -15,21 +15,22 @@
 	// kontrolli ainult siis, kui kasutaja vajutab "logi sisse" nuppu
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-		//kontrollime, et e-post ei oleks t??		if(empty($_POST["email"])) { 
-			$email_error = "Ei saa olla tühi;
+		//kontrollime, et e-post ei oleks tÃ¼hi		
+		if(empty($_POST["email"])) { 
+			$email_error = "Ei saa olla tÃ¼hi";
 		}
 		//kontrollime parooli	
 		if(empty($_POST["password"])) { 
-			$password_error = "Ei saa olla tühi;
+			$password_error = "Ei saa olla tÃ¼hi";
 		} 
 		if(empty($_POST["comment"])) { 
-			$comment_error = "Ei saa olla tühi;
-		}
-		else {
+			$comment_error = "Ei saa olla tÃ¼hi";
+		} else {
 		
-			//parooli pikkuse kontroll, kui see ei ole tühi			if(strlen($_POST["password"])<8){
+			//parooli pikkuse kontroll, kui see ei ole tÃ¼hi			
+			if(strlen($_POST["password"])<8){
 				
-				$password_error = "Peab olema vähemalt 8 tähemärki pikk";
+				$password_error = "Peab olema vÃ¤hemalt kaheksa sÃ¼mbolit pikk";
 		
 			}
 		
@@ -45,9 +46,10 @@
 		<h2>Login</h2>
 		<form action="user_form.php" method="post">
 			<input name="email" type="email" placeholder="E-post">* <?php echo $email_error; ?><br> <br>
-			<input name="password" type="password" placeholder="parool">*<br> <br> <?php echo $password_error; ?> <br> <br>
+			<input name="password" type="password" placeholder="parool">*
+<?php echo $password_error; ?> <br> <br>
 
-			<input name="comment" rows="10" cols="30" placeholder="comment"> </textarea>*<br> <br> <?php echo $comment_error; ?> 
+			<input name="comment" type="textarea" rows="10" cols="30" placeholder="comment"> </textarea>*<br> <br> <?php echo $comment_error; ?> 
 			
 			<input type="checkbox" name="option1" value="o1"> Sain aru.
 			<br>
