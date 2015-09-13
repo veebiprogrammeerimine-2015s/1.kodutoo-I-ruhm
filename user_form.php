@@ -40,6 +40,7 @@
         <title>User login page</title>
     </head>
     <body>
+		<p></p>
         <h2>Login</h2>
         <form action="user_form.php" method="post">
         <input name="email" type="email" placeholder="E-post">* <?php echo $email_error;?> <br><br>
@@ -48,7 +49,18 @@
         <input type="submit" value="Logi sisse">
         </form>
         <h2>Create user</h2>
-        <input type="name" >
+		<form action="user_form.php" method="post">
+        <input type="text" name="firstname" placeholder="Eesnimi">*<br><br>
+		<input type="text" name="lastname" placeholder="Perenimi">*<br><br>
+		<input type="radio" name="sex" value="female" checked>Male * <br><br>
+		<input type="radio" name="sex" value="male">Female*<br><br>
+		<input type="email" name="email" placeholder="E-post">*<br><br>
+		<input name="password" type="password" placeholder="Parool">*
+		<input name="password" type="password" placeholder="Korda parooli">*<br><br>
+		
+
+
+		</form>
     </body>
     
 </html>
