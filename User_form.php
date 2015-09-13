@@ -35,7 +35,7 @@
 		<form action="User_form.php" method="post">
 		
 		<input name="email" type="email" placeholder="E-post">* <?php echo $email_error; ?> <br> <br> 
-		<input name="password" type="password" placeholder="Password">	
+		<input name="password" type="password" placeholder="Password">	<br> <br>
 		
 		<input type="submit" value="logi sisse">
 		</form>
