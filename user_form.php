@@ -7,6 +7,12 @@
     
     $email_error="";
     $password_error="";
+	$password1_error="";
+	$password2_error="";
+	$firstname_error="";
+	$lastname_error="";
+	$epost_error="";
+	
     
     //Kontrolli ainult siis, kui kasutaja vajutab logi sisse nuppu
     if($_SERVER["REQUEST_METHOD"] == "POST"){      //kasutaja vajutas nuppu
@@ -27,8 +33,37 @@
             }
             
         }
-        
-        
+		if(empty($_POST["firstname"])){
+			$firstname_error="Kohustuslik väli";
+		}
+		if(empty($_POST["lastname"])){
+			$lastname_error="Kohustuslik väli";
+		}
+        if(empty($_POST["epost"])){
+			$epost_error="Kohustuslik väli";
+		}
+        if(empty($_POST["password1"])){
+            $password1_error="Ei saa olla tühi";
+        }else{
+            
+            //parool ei ole tühi, kontrollime pikkust
+            if(strlen($_POST["password1"]) < 8){
+                $password1_error="Peab olema vähemalt 8 sümbolit";
+                
+            }
+            
+        }
+		if(empty($_POST["password2"])){
+            $password2_error="Ei saa olla tühi";
+        }else{
+            
+            //parool ei ole tühi, kontrollime pikkust
+            if(strlen($_POST["password2"]) != strlen($_POST["password1"])){
+                $password2_error="Vale parool";
+                
+            }
+            
+        }
     }
        
 ?> 
@@ -40,7 +75,7 @@
         <title>User login page</title>
     </head>
     <body>
-		<p></p>
+		<p>Tegemist on e-poega, kus on võimalik soetada erinevate jooksuürituste pääsmeid.</p>
         <h2>Login</h2>
         <form action="user_form.php" method="post">
         <input name="email" type="email" placeholder="E-post">* <?php echo $email_error;?> <br><br>
@@ -50,13 +85,14 @@
         </form>
         <h2>Create user</h2>
 		<form action="user_form.php" method="post">
-        <input type="text" name="firstname" placeholder="Eesnimi">*<br><br>
-		<input type="text" name="lastname" placeholder="Perenimi">*<br><br>
-		<input type="radio" name="sex" value="female" checked>Male * <br><br>
-		<input type="radio" name="sex" value="male">Female*<br><br>
-		<input type="email" name="email" placeholder="E-post">*<br><br>
-		<input name="password" type="password" placeholder="Parool">*
-		<input name="password" type="password" placeholder="Korda parooli">*<br><br>
+        <input type="text" name="firstname" placeholder="Eesnimi">* <?php echo $firstname_error;?><br><br>
+		<input type="text" name="lastname" placeholder="Perenimi">*<?php echo $lastname_error;?><br><br>
+		<input type="radio" name="sex" value="female" checked>Female <br><br>
+		<input type="radio" name="sex" value="male">Male <br><br>
+		<input type="email" name="epost" placeholder="E-post">*<?php echo $epost_error;?><br><br>
+		<input type="password" name="password1" placeholder="Parool">*<?php echo $password1_error;?><br><br>
+		<input type="password" name="password2" placeholder="Korda parooli">*<?php echo $password2_error;?><br><br>
+		<input type="submit" value="Loo konto">
 		
 
 
