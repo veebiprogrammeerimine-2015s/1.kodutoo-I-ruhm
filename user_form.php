@@ -48,7 +48,7 @@
         <input type="submit" value="Logi sisse">
         </form>
         <h2>Create user</h2>
-        
+        <input type="name" >
     </body>
     
 </html>
