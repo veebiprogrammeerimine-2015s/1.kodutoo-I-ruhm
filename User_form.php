@@ -30,13 +30,14 @@
 	 <title>EvoGlass</title>
 	</head>
 	<body>
-	
+		<h4>See veebileht on loodud selleks, et tellida endale omapärased prillid, mis sobiksid vastavalt inimese peakujuga ja oleksid sobiva hinnaga.</h4>
+		<h4>Lähemalt tutvimiseks minge sellele leheküljele : http://evoklaas.blogspot.com.ee/ </h4>
+		<h4>Facebookist leiate meid leheküljelt : https://www.facebook.com/EVOGlasses?fref=ts </h4>
 		<h2>Login</h2>
 		<form action="User_form.php" method="post">
 		
 		<input name="email" type="email" placeholder="E-post">* <?php echo $email_error; ?> <br> <br> 
-		<input name="password" type="password" placeholder="Password">	<br> <br>
-		
+		<input name="password" type="password" placeholder="Password">	<br> <br>	
 		<input type="submit" value="logi sisse">
 		</form>
 		<h2>Sign up</h2>
