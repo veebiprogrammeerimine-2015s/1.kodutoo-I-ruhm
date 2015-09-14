@@ -1,7 +1,7 @@
-<?php
+ï»¿<?php
 
 		// user_form.php
-		// jutumärkide vahele input elemendi väärtus
+		// jutumÃ¤rkide vahele input elemendi vÃ¤Ã¤rtus
 		
 		//echo $_POST["email"];
 		
@@ -17,12 +17,15 @@
 				$email_error = "viga";
 			}	
 			if(empty($_POST["password"])) {
-				$password_error = "Teie parooli lünk on tühi";
+				$password_error = "Teie parooli lÃ¼nk on tÃ¼hi";
+			}else {
+				//parool ei saa olla tÃ¼hi, kontrollime pikkust
+				if(strlen($_POST["password"]) < 8 ) {
+					$password_error = "Peab olema vÃ¤hemalt 8 sÃ¼mbolit pikk";
+				}
+				
 			}
-				//parool ei saa olla tühi, kontrollime pikkust
-			if(strlen($_POST["password"]) < 8 ) {
-				$password_error = "Peab olema vähemalt 8 sümbolit pikk";
-			}
+			
 		}
 ?>
 <html>
@@ -30,23 +33,30 @@
 	 <title>EvoGlass</title>
 	</head>
 	<body>
-		<h4>See veebileht on loodud selleks, et tellida endale omapärased prillid, mis sobiksid vastavalt inimese peakujuga ja oleksid sobiva hinnaga.</h4>
-		<h4>Lähemalt tutvimiseks minge sellele leheküljele : http://evoklaas.blogspot.com.ee/ </h4>
-		<h4>Facebookist leiate meid leheküljelt : https://www.facebook.com/EVOGlasses?fref=ts </h4>
+		<h4>See veebileht on loodud selleks, et tellida endale omapÃ¤rased prillid, mis sobiksid vastavalt inimese peakujuga ja oleksid sobiva hinnaga.</h4>
+		<h4>LÃ¤hemalt tutvimiseks minge sellele lehekÃ¼ljele : http://evoklaas.blogspot.com.ee/ </h4>
+		<h4>Facebookist leiate meid lehekÃ¼ljelt : https://www.facebook.com/EVOGlasses?fref=ts </h4>
 		<h2>Login</h2>
 		<form action="User_form.php" method="post">
 		
 		<input name="email" type="email" placeholder="E-post">* <?php echo $email_error; ?> <br> <br> 
 		<input name="password" type="password" placeholder="Password">	<br> <br>	
-		<input type="submit" value="logi sisse">
+		<input type="submit" value="log in">
 		</form>
 		<h2>Sign up</h2>
 		<form action="User_form.php" method="post">
 		
-		<input name="isikukood" type="text" placeholder="isikukood">* <?php echo $email_error; ?> <br> <br> 
-		<input name="test" type="text" placeholder="vanus"> <br> <br>
-		<input name="test1" type="text" placeholder="sugu"> <br> <br> 	
+		<input name="isikukood" type="text" placeholder="personal code">* <?php echo $email_error; ?> <br> <br> 
+		<input name="test" type="text" placeholder="age"> <br> <br>
+		Gender:
+		<input type="radio" name="gender"
+		<?php if (isset($gender) && $gender=="female") echo "checked";?>
+		value="female">Female
+		<input type="radio" name="gender"
+		<?php if (isset($gender) && $gender=="male") echo "checked";?>
+		value="male">Male	<br> <br>
 		
-		<input type="submit" value="logi sisse">		
+		<input type="submit" value="log in">	
+			</form>
 	</body>
 </html>
