@@ -51,11 +51,27 @@
 		}
 		
 	}
+	//siit algab kasutaja loomise osa.
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
+		
+		if (empty($_POST["name"])) {
+			$name_error = "Eesnime väli on kohustuslik!";
+		}else{
+			$name = ($_POST["name"]);
+		}	
+		
+		if (empty($_POST["name"])) {
+			$surname_error = "Perekonnanime väli on kohustuslik!";
+		}else{
+			$surname = ($_POST["surname"]);
+		}	
+		
 		if(empty($_POST["newemail"])){
-			$newemail_error = "email on kohustuslik!";
-			
+			$newemail_error = "e-maili väli on kohustuslik!";
+		}else{
+			$newemail = ($_POST["newemail"]);
 		}
+		
 		
 		if(empty($_POST["password1"])){
             $password1_error="Ei saa olla tühi";
@@ -90,7 +106,7 @@
 	</head>
 	
 	<body>
-		Veebilehele sisselogides pääseks ligi kogutud andmetele, mis on saadud välitööde käigus, kaardistades rannikualasid (GPS-punktid, pildid, kommentaarid).
+		Veebilehele sisselogides saaks sisestada andmeid/pääseks ligi kogutud andmetele/neid analüüsida, mis on saadud välitööde käigus. Tegu on NATURA 2000 rannikuelupaikade kaardistamises (GPS-punktid, pildid, kommentaarid).
 		Edasi graafikud, joonised nende andmete analüüsil. Geoökoloogia.
 	
 		<h2>Log in</h2>
@@ -108,26 +124,23 @@
 			
 			<form action="user_form.php" method="post">
 			
-				<input type="text" name="name" placeholder="Eesnimi">*<?php echo $name;?><br><br>
-				<input type="text" name="surname" placeholder="Perekonnanimi">*<?php echo $surname;?><br><br>
-				<input name="email" type="email" placeholder="e-post">* <?php echo $newemail_error; ?> <br><br>
+				<input type="text" name="name" placeholder="Eesnimi">* <?php echo $name_error;?><br><br>
+				<input type="text" name="surname" placeholder="Perekonnanimi">* <?php echo $surname_error;?><br><br>
+				<input name="newemail" type="email" placeholder="e-post">* <?php echo $newemail_error; ?> <br><br>
 				<input name="password1" type="password" placeholder="Sisesta soovitud parool">* <?php echo $password1_error; ?><br><br>
 				<input name="password2" type="password" placeholder="Sisesta parool uuesti">* <?php echo $password2_error; ?><br><br>
 				
 				
-				Biograafia<textarea name="comment" rows="5" cols="30"><?php echo $comment;?></textarea><br>
+				Biograafia<textarea name="comment" rows="5" cols="30"><?php echo $comment;?></textarea><br><br>
 				
 				<input type="radio" name="gender" value="female">Naine
 				<input type="radio" name="gender" value="male">Mees
 	
-			
 				<input type="submit" value="Registreeri kasutajaks!">
 			
 			
 			</form>
-			
-			
-		
+					
 		
 	</body>
 
