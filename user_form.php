@@ -61,6 +61,6 @@
 			
 			<input type="submit" value="Loo kasutaja">
 		</form>
-	MVP idee - toidukaupade tellimine l‰bi interneti, st inimene valib virutaalses keskkonnas need toidukaubad, mida soovib osta, ning kuller toob need talle koju k‰tte (pmt nagu tellitoit.ee, ainult restoranide ja kohvikute asemel tuuakse kaup toidupoest)
+	MVP idee - toidukaupade tellimine l√§bi interneti, st inimene valib virutaalses keskkonnas need toidukaubad, mida soovib osta, ning kuller toob need talle koju k√§tte (pmt nagu tellitoit.ee, ainult restoranide ja kohvikute asemel tuuakse kaup toidupoest)
 	</body>
 </html>
