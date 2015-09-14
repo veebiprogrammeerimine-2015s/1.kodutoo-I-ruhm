@@ -26,10 +26,10 @@
 			$password_error = "Ei saa olla tühi";
 		} 
 		if(empty($_POST["email_2"])) { 
-			$email_2_error = "Ei saa olla tühi";
+			$email_2_error = "Ei saa olla täitmata";
 		} 	
 			if(empty($_POST["password_2"])) { 
-			$password_2_error = "Ei saa olla tühi";
+			$password_2_error = "Ei saa olla täitmata";
   } else {
 		
 			//parooli pikkuse kontroll, kui see ei ole tühi			
@@ -58,11 +58,11 @@
 		<h2>Create user</h2>
 		<form action="user_form.php" method="post">
 			<input name="email_2" type="email" placeholder="E-post">* <?php echo $email_2_error; ?><br> <br>
-			<input name="password_2" type="password" placeholder="parool">*<?php echo $password_2_error; ?> <br> <br>
+			<input name="password_2" type="password" placeholder="parool">* <?php echo $password_2_error; ?> <br> <br>
 
 			<input name="comment" type="text" placeholder="comment"> <br> <br> 
-			<textarea name="comment1" type="text" cols= "40" rows= "5" placeholder="see võib tühi ka olla"></textarea> <br> <br>
-			<textarea name="comment2" type="text" cols= "60" rows= "5"> Enda tööks planeerin trennipäeviku koostamise. Tegemist võiks olla sellise asjaga, kuhu inimene kirjutab, et mis päevadel ja mida ta täpselt tegi. Andmete põhjal saaks siis teha erinevaid arvutusi ja järeldusi.</textarea> <br> <br>
+			<textarea name="comment1" type="text" cols= "40" rows= "5" placeholder="Lisainfo"></textarea> <br> <br>
+			<textarea name="comment2" type="text" cols= "60" rows= "5"> Enda tööks planeerin trennipäeviku koostamise. Tegemist võiks olla sellise asjaga, kuhu inimene kirjutab, et mis päevadel ja mida ta täpselt tegi. Andmete põhjal saaks siis teha erinevaid arvutusi ja järeldusi. Kasutajaid võib olla ka mitu.</textarea> <br> <br>
 			<input name="option1" type="checkbox" value="o1"> Sain aru.
 			<br>
 			<input name="option2" type="checkbox" value="o2"> Oskasin laadida githubi. 
