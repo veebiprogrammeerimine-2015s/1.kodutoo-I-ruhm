@@ -16,6 +16,7 @@
 	$password1 = "";
 	$password2 = "";
 	$password1_error ="";
+	$password2_error="";
 	$name = "";
 	$name_error = "";
 	$surname = "";
@@ -47,19 +48,39 @@
 			}
 			
 		}
+		
+	}
+	if($_SERVER["REQUEST_METHOD"] == "POST"){
 		if(empty($_POST["newemail"])){
 			$newemail_error = "email on kohustuslik!";
+			
 		}
 		
 		if(empty($_POST["password1"])){
-		$password1_error = "Parooliväli on kohustuslik";
-		}else{
-			if(strlen($_POST["password1"]) < 8){
-				$password1_error = "Paroolis peab olema vähemalt 8 sümbolit!";	
-		}
+            $password1_error="Ei saa olla tühi";
+        }else{
+            
+            //parool ei ole tühi, kontrollime pikkust
+            if(strlen($_POST["password1"]) < 8){
+                $password1_error="Peab olema vähemalt 8 sümbolit!";
+                
+            }
+            
+        }
+		if(empty($_POST["password2"])){
+            $password2_error="Väli peab täidetud olema!";
+        }else{
+            
+            //parool ei ole tühi, kontrollime pikkust
+            if(strlen($_POST["password2"]) != strlen($_POST["password1"])){
+                $password2_error="Paroolid ei kattu!";
+                
+            }
+            
+        }
 	
 	}
-	}
+	
 	
 ?>
 <html>
@@ -88,7 +109,8 @@
 				<input type="text" name="surname" placeholder="Perekonnanimi">*<?php echo $surname;?><br><br>
 				<input name="email" type="email" placeholder="e-post">* <?php echo $newemail_error; ?> <br><br>
 				<input name="password1" type="password" placeholder="Sisesta soovitud parool">* <?php echo $password1_error; ?><br><br>
-				<input name="password2" type="password" placeholder="Sisesta parool uuesti">* <?php echo $password1_error; ?><br><br>
+				<input name="password2" type="password" placeholder="Sisesta parool uuesti">* <?php echo $password2_error; ?><br><br>
+				
 				
 				Biograafia<textarea name="comment" rows="5" cols="30"><?php echo $comment;?></textarea><br>
 				
@@ -100,6 +122,7 @@
 			
 			
 			</form>
+			
 			
 		
 		
