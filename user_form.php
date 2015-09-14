@@ -1,5 +1,6 @@
 <?php
 
+	
 	//user_form.php
 	//jutumärkide vahele GET-ile, see mida tahame kätte saada input elemendist NAME HTMLis.
 	//olulised on <form action="user_form.php" method="get">
@@ -89,7 +90,9 @@
 	</head>
 	
 	<body>
-		
+		Veebilehele sisselogides pääseks ligi kogutud andmetele, mis on saadud välitööde käigus, kaardistades rannikualasid (GPS-punktid, pildid, kommentaarid).
+		Edasi graafikud, joonised nende andmete analüüsil. Geoökoloogia.
+	
 		<h2>Log in</h2>
 		<!--selleks, et -->
 			<form action="user_form.php" method="post">
