@@ -15,9 +15,9 @@
 	$email_error = "";
 	$password_error ="";
 	$password1 = "";
-	$password2 = "";
+	
 	$password1_error ="";
-	$password2_error="";
+	
 	$name = "";
 	$name_error = "";
 	$surname = "";
@@ -84,17 +84,7 @@
             }
             
         }
-		if(empty($_POST["password2"])){
-            $password2_error="Väli peab täidetud olema!";
-        }else{
-            
-            //parool ei ole tühi, kontrollime pikkust
-            if(strlen($_POST["password2"]) != strlen($_POST["password1"])){
-                $password2_error="Paroolid ei kattu!";
-                
-            }
-            
-        }
+		
 	
 	}
 	
@@ -128,7 +118,7 @@
 				<input type="text" name="surname" placeholder="Perekonnanimi">* <?php echo $surname_error;?><br><br>
 				<input name="newemail" type="email" placeholder="e-post">* <?php echo $newemail_error; ?> <br><br>
 				<input name="password1" type="password" placeholder="Sisesta soovitud parool">* <?php echo $password1_error; ?><br><br>
-				<input name="password2" type="password" placeholder="Sisesta parool uuesti">* <?php echo $password2_error; ?><br><br>
+				
 				
 				
 				Biograafia<textarea name="comment" rows="5" cols="30"><?php echo $comment;?></textarea><br><br>
