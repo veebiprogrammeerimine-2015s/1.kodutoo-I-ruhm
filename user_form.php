@@ -55,5 +55,6 @@ echo $_POST["confirm_password"];
 	<input name="confirm_password" type="password" placeholder="Confirm password"> <?php echo $confirm_password_error; ?> <br>
 	<input type="submit" value="Create user">
 	</form>
+	Ideeks on teha endale kodutööde tahvel või list koos kuupäevaga, mis päevaks see vaja teha on. Ilmselt tuleb mingi lihtne tabel, kus esimene tulp on kodutöö kirjeldus, teine tulp on esitamise viimane kuupäev, kolmas on tulp, kus on kastid, kuhu saab linnukese teha, andes endale teada, et kodutöö on tehtud. Neljas võiks olla e-meili tulp, kus on vastava tunni õppejõu vastav e-meil.
 	</body>
 </html>
