@@ -45,9 +45,15 @@
 	
 		<h2>Login</h2>
 		<form action="user_form.php" method="post">
+			<input name="email" type="email" placeholder="E-post">*<?php echo $email_error; ?><br> <br>
+			<input name="password" type="password" placeholder="parool">*<?php echo $password_error; ?> <br> <br>
+
+			<input type="submit" value="logi sisse"> 
+		</form>
+		<h4>Create user</h4>
+		<form action="user_form.php" method="post">
 			<input name="email" type="email" placeholder="E-post">* <?php echo $email_error; ?><br> <br>
-			<input name="password" type="password" placeholder="parool">*
-<?php echo $password_error; ?> <br> <br>
+			<input name="password" type="password" placeholder="parool">*<?php echo $password_error; ?> <br> <br>
 
 			<input name="comment" type="text" placeholder="comment">* <?php echo $comment_error; ?> <br> <br> 
 			<textarea name="comment1" type="text" cols= "40" rows= "5" placeholder="see võib tühi ka olla"></textarea> <br> <br>
@@ -57,10 +63,10 @@
 			<input name="option2" type="checkbox" value="o2"> Oskasin laadida githubi. 
 			<br>
 
-			<input type="submit" value="logi sisse"> 
+			<input type="submit" value="loo kasutaja"> 
 		</form>
 		
-		<h4>Create user</h4>
-		
 	</body>
-</html>
+</html>	
+
+	
