@@ -13,6 +13,17 @@
 	
 	$email_error = "";
 	$password_error ="";
+	$password1 = "";
+	$password2 = "";
+	$password1_error ="";
+	$name = "";
+	$name_error = "";
+	$surname = "";
+	$surname_error = "";
+	$newemail = "";
+	$newemail_error = "";
+	$comment ="";
+	
 	
 	//kontrolli ainult siis kui kasutaja vajutab "Logi sisse" nuppu.
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -36,6 +47,18 @@
 			}
 			
 		}
+		if(empty($_POST["newemail"])){
+			$newemail_error = "email on kohustuslik!";
+		}
+		
+		if(empty($_POST["password1"])){
+		$password1_error = "Parooliväli on kohustuslik";
+		}else{
+			if(strlen($_POST["password1"]) < 8){
+				$password1_error = "Paroolis peab olema vähemalt 8 sümbolit!";	
+		}
+	
+	}
 	}
 	
 ?>
@@ -58,6 +81,25 @@
 			
 			
 		<h2>Create user</h2>
+			
+			<form action="user_form.php" method="post">
+			
+				<input type="text" name="name" placeholder="Eesnimi">*<?php echo $name;?><br><br>
+				<input type="text" name="surname" placeholder="Perekonnanimi">*<?php echo $surname;?><br><br>
+				<input name="email" type="email" placeholder="e-post">* <?php echo $newemail_error; ?> <br><br>
+				<input name="password1" type="password" placeholder="Sisesta soovitud parool">* <?php echo $password1_error; ?><br><br>
+				<input name="password2" type="password" placeholder="Sisesta parool uuesti">* <?php echo $password1_error; ?><br><br>
+				
+				Biograafia<textarea name="comment" rows="5" cols="30"><?php echo $comment;?></textarea><br>
+				
+				<input type="radio" name="gender" value="female">Naine
+				<input type="radio" name="gender" value="male">Mees
+	
+			
+				<input type="submit" value="Registreeri kasutajaks!">
+			
+			
+			</form>
 			
 		
 		
