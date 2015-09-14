@@ -18,25 +18,22 @@ echo $_POST["confirm_password"];
 		//Tühjuse kontroll
 		if(empty($_POST["email"])) {
 			$email_error ="Unavailable";
-			if(empty($_POST["password"])) {	
-				$password_error = "Also unavailable";
-				if(empty($_POST["username"])) {
-						$username_error = "Please enter an username";
-						if(empty($_POST["newemail"])) {
-								$email_error2 = "Please add your E-mail";
-								if(empty($_POST["new_password"])) {
-										$new_password_error = "Please enter a password";
-										if(empty($_POST["confirm_password"])) {
-											$confirm_password_error = "Does not match";
-												
-											}
-									}
-							}
-					}
-			}
 		}
-	}
-	
+		if(empty($_POST["password"])) {	
+			$password_error = "Also unavailable";
+		}
+		if(empty($_POST["username"])) {
+			$username_error = "Please enter an username";
+		}
+		if(empty($_POST["newemail"])) {
+			$email_error2 = "Please add your E-mail";
+		}
+		if(empty($_POST["new_password"])) {
+			$new_password_error = "Please enter a password";
+		}
+		if(empty($_POST["confirm_password"])) {
+			$confirm_password_error = "Does not match";
+		}
 ?>
 <html>
 	<head>
