@@ -1,6 +1,6 @@
 <?php
 
-	// user_form.php
+	//user_form.php
 	
 	//jutumärkide vahele input elemendi NAME
 	//echo $_POST["email"]; 
@@ -13,35 +13,48 @@
 	$password_2_error = "" ;
 	$comment_error = "" ;
 
-
+	$email="";
+	$password="";
+	
+	
 	// kontrolli ainult siis, kui kasutaja vajutab "logi sisse" nuppu
-	if($_SERVER["REQUEST_METHOD"] == "POST"){
-
+	    if($_SERVER["REQUEST_METHOD"] == "POST"){
+					
 		//kontrollime, et e-post ei oleks tühi		
 		if(empty($_POST["email"])) { 
 			$email_error = "Ei saa olla tühi";
-		}
+		} else {
+			
+		$email = input($_POST["email"]);}
 		//kontrollime parooli	
 		if(empty($_POST["password"])) { 
 			$password_error = "Ei saa olla tühi";
-		} 
-		if(empty($_POST["email_2"])) { 
-			$email_2_error = "Ei saa olla täitmata";
-		} 	
-			if(empty($_POST["password_2"])) { 
-			$password_2_error = "Ei saa olla täitmata";
-  } else {
-		
-			//parooli pikkuse kontroll, kui see ei ole tühi			
+		} else {$password = input($_POST["password"]);
+		}
+		//parooli pikkuse kontroll, kui see ei ole tühi			
 			if(strlen($_POST["password"])<8){
 				
-				$password_error = "Peab olema vähemalt kaheksa sümbolit pikk";
+				$password_2_error = "Peab olema vähemalt kaheksa sümbolit pikk";
+		}  else {
+			
+		}
 		
-			}
+	 
+		if(empty($_POST["email_2"])) { 
+			$email_2_error = "Ei saa olla täitmata";
+		} 	 else {
+			
+		}
+			if(empty($_POST["password"])) { 
+			$password_2_error = "Ei saa olla täitmata";
 		
+		}	else {
 		}
 	}
+	
+		
 ?>
+
 <html>
 	<head>
 		<title>User login page</title>
@@ -53,22 +66,19 @@
 			<input name="email" type="email" placeholder="E-post">*<?php echo $email_error; ?><br> <br>
 			<input name="password" type="password" placeholder="parool">*<?php echo $password_error; ?> <br> <br>
 
-			<input type="submit" value="logi sisse"> 
+			<input name="login" type="submit" value="logi sisse"> 
 		</form>
+		
 		<h2>Create user</h2>
-		<form action="user_form.php" method="post">
+			<form action="user_form.php" method="post">
 			<input name="email_2" type="email" placeholder="E-post">* <?php echo $email_2_error; ?><br> <br>
-			<input name="password_2" type="password" placeholder="parool">* <?php echo $password_2_error; ?> <br> <br>
-
+			<input name="password" type="password" placeholder="parool">* <?php echo $password_2_error; ?> <br> <br>
 			<input name="comment" type="text" placeholder="comment"> <br> <br> 
 			<textarea name="comment1" type="text" cols= "40" rows= "5" placeholder="Lisainfo"></textarea> <br> <br>
 			<textarea name="comment2" type="text" cols= "60" rows= "5"> Enda tööks planeerin trennipäeviku koostamise. Tegemist võiks olla sellise asjaga, kuhu inimene kirjutab, et mis päevadel ja mida ta täpselt tegi. Andmete põhjal saaks siis teha erinevaid arvutusi ja järeldusi. Kasutajaid võib olla ka mitu.</textarea> <br> <br>
-			<input name="option1" type="checkbox" value="o1"> Sain aru.
-			<br>
-			<input name="option2" type="checkbox" value="o2"> Oskasin laadida githubi. 
-			<br>
-
-			<input type="submit" value="loo kasutaja"> 
+			<input name="option1" type="checkbox" value="o1"> Sain aru. <br>
+			<input name="option2" type="checkbox" value="o2"> Oskasin laadida githubi. <br>
+			<input name="create" type="submit" value="loo kasutaja"> 
 		</form>
 		
 	</body>
