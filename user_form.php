@@ -113,3 +113,4 @@
 						
 						<input name="Create" type="submit" value="Create">
 			
+			//Idee oleks teha leht, kus kasutaja saab arvet pidada näiteks auto kulutuste üle. Et salvestada siis asjade kulutusi koos kuupäeva, summa, kirjelduse ja näiteks läbisõiduga. Erinevat sorti kulutustel erinevad kategooriad ja oleks võimalik vaadata nii ajavahemiku kui kulutuste tüübi järgi "ajalugu" jms.
