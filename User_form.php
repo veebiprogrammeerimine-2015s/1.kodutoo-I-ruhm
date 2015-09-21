@@ -64,7 +64,8 @@
 		<form action="User_form.php" method="post">
 		
 		<input name="email" type="email" placeholder="E-post">* <?php echo $email_error; ?> <br> <br> 
-		<input name="password" type="password" placeholder="Password">*	<br> <br>	
+		<input name="password" type="password" placeholder="Password">* <?php 
+			echo $password_error; ?> <br> <br> 
 		<input type="submit" value="log in">
 		</form>
 		<h2>Sign up</h2>
