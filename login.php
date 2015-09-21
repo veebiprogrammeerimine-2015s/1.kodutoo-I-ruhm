@@ -84,7 +84,6 @@
 	$page_file_name="login.php";
 ?>
 
-<?php require_once ("../header.php"); ?>
 
 
 		<h2>Login</h2>
@@ -104,4 +103,6 @@
 
 		
 		
-<?php require_once ("../footer.php"); ?>
+
+
+MVP idee: lehekülg kasside hoiukohale, kus kasse saab erinevate parameetrite alusel sorteeerida ning on ka näha need, kes on juba kodu leidnud. 
