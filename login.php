@@ -134,3 +134,28 @@
 	$mysqli->close();
   
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+</head>
+<body>
+
+  <h2>Log in</h2>
+  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" >
+  	<input name="email" type="email" placeholder="E-post" value="<?php echo $email; ?>"> <?php echo $email_error; ?><br><br>
+  	<input name="password" type="password" placeholder="Parool" value="<?php echo $password; ?>"> <?php echo $password_error; ?><br><br>
+  	<input type="submit" name="login" value="Log in">
+  </form>
+
+  <h2>Create user</h2>
+  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" >
+  	<input name="create_email" type="email" placeholder="E-post" value="<?php echo $create_email; ?>"> <?php echo $create_email_error; ?><br><br>
+  	<input name="create_password" type="password" placeholder="Parool"> <?php echo $create_password_error; ?> <br><br>
+  	<input type="submit" name="create" value="Create user">
+  </form>
+
+  <h3> MVP idee on luua kasutaja põhine leht, mis toimib kui online notepad, kus iga kasutaja näeb vaid oma salvestatud teksti ning saab seda igal ajal lugeda ja muuta.</h3>
+  
+</body>
+</html>
