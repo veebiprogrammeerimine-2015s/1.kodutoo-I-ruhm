@@ -1,4 +1,21 @@
-    // *********************
+<?php    	
+	
+  // muuutujad errorite jaoks
+	$email_error = "";
+	$password_error = "";
+	$create_email_error = "";
+	$create_password_error = "";
+
+  // muutujad väärtuste jaoks
+	$email = "";
+	$password = "";
+	$create_email = "";
+	$create_password = "";
+
+
+	if($_SERVER["REQUEST_METHOD"] == "POST") {
+	
+	// *********************
     // **** LOGI SISSE *****
     // *********************
 		if(isset($_POST["login"])){
@@ -36,3 +53,5 @@
 					$create_password = cleanInput($_POST["create_password"]);
 				}
 			}
+			
+?>			
