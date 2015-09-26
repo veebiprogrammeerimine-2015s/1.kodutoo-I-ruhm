@@ -1,23 +1,12 @@
 <?php
 
-  //loome AB ühenduse
-	require_once ("../config.php");
-	$database = "if15_kristalv";
-	$mysqli = new mysqli($servername, $username, $password, $database);
-
-  //check connection
-	if($mysqli->connect_error) {
-		die("connect error ".mysqli_connect_error());
-	}
-	
-	
   // muuutujad errorite jaoks
 	$email_error = "";
 	$password_error = "";
 	$create_email_error = "";
 	$create_password_error = "";
 
-  // muutujad väärtuste jaoks
+  // muutujad vÃ¤Ã¤rtuste jaoks
 	$email = "";
 	$password = "";
 	$create_email = "";
@@ -32,35 +21,35 @@
 		if(isset($_POST["login"])){
 
 			if ( empty($_POST["email"]) ) {
-				$email_error = "See väli on kohustuslik";
+				$email_error = "See vÃ¤li on kohustuslik";
 			}else{
-        // puhastame muutuja võimalikest üleliigsetest sümbolitest
+        // puhastame muutuja vÃµimalikest Ã¼leliigsetest sÃ¼mbolitest
 				$email = cleanInput($_POST["email"]);
 			}
 
 			if ( empty($_POST["password"]) ) {
-				$password_error = "See väli on kohustuslik";
+				$password_error = "See vÃ¤li on kohustuslik";
 			}else{
 				$password = cleanInput($_POST["password"]);
 			}
 
-      // Kui oleme siia jõudnud, võime kasutaja sisse logida
+      // Kui oleme siia jÃµudnud, vÃµime kasutaja sisse logida
 			if($password_error == "" && $email_error == ""){
-				echo "Võib sisse logida! Kasutajanimi on ".$email." ja parool on ".$password;
+				echo "VÃµib sisse logida! Kasutajanimi on ".$email." ja parool on ".$password;
 			
 				$hash = hash("sha512", $password);
 				
 				$stmt = $mysqli->prepare("SELECT id, email FROM user_sample WHERE email=? AND password=?");
-				//küsimärkide asendus
+				//kÃ¼simÃ¤rkide asendus
 				$stmt->bind_param("ss", $email, $hash);
 				//ab tulnud muutujad
 				$stmt->bind_result($id_from_db, $email_from_db);
 				$stmt->execute();
 				
-				//teeb päringu ja kui on tõene (st, et AB oli see väärtus)
+				//teeb pÃ¤ringu ja kui on tÃµene (st, et AB oli see vÃ¤Ã¤rtus)
 				if($stmt->fetch()){
 					
-					//kasutaja email ja parool õiged
+					//kasutaja email ja parool Ãµiged
 					echo "Kasutaja logis sisse id=".$id_from_db;
 				
 				}else{
@@ -79,16 +68,16 @@
     if(isset($_POST["create"])){
 
 			if ( empty($_POST["create_email"]) ) {
-				$create_email_error = "See väli on kohustuslik";
+				$create_email_error = "See vÃ¤li on kohustuslik";
 			}else{
 				$create_email = cleanInput($_POST["create_email"]);
 			}
 
 			if ( empty($_POST["create_password"]) ) {
-				$create_password_error = "See väli on kohustuslik";
+				$create_password_error = "See vÃ¤li on kohustuslik";
 			} else {
 				if(strlen($_POST["create_password"]) < 8) {
-					$create_password_error = "Peab olema vähemalt 8 tähemärki pikk!";
+					$create_password_error = "Peab olema vÃ¤hemalt 8 tÃ¤hemÃ¤rki pikk!";
 				}else{
 					$create_password = cleanInput($_POST["create_password"]);
 				}
@@ -96,23 +85,20 @@
 
 			if(	$create_email_error == "" && $create_password_error == ""){
 				echo hash("sha512", $create_password);
-				echo "Võib kasutajat luua! Kasutajanimi on ".$create_email." ja parool on ".$create_password;
+				echo "VÃµib kasutajat luua! Kasutajanimi on ".$create_email." ja parool on ".$create_password;
 			
-			  //tekitan parooli räsi muutujasse hash
+			  //tekitan parooli rÃ¤si muutujasse hash
 				$hash = hash("sha512", $create_password);
-			
-			  //salvestan andmebaasi
-				$stmt = $mysqli->prepare("INSERT INTO user_sample (email, password) VALUES (?,?)");
-							
-			  //kirjutan välja errori
+
+			  //kirjutan vÃ¤lja errori
 			  //echo $stmt->error;
 			  //echo $mysqli->error;
 				
-			  //paneme muutujad küsimärkide asemele
-			  //ss - s on string, iga muutuja kohta üks täht
+			  //paneme muutujad kÃ¼simÃ¤rkide asemele
+			  //ss - s on string, iga muutuja kohta Ã¼ks tÃ¤ht
 				$stmt->bind_param("ss", $create_email, $hash);
 				
-			  //käivitab sisestuse
+			  //kÃ¤ivitab sisestuse
 				$stmt->execute();
 				$stmt->close();
 			
@@ -122,16 +108,13 @@
 
 	}
 
-  // funktsioon, mis eemaldab kõikvõimaliku üleliigse tekstist
+  // funktsioon, mis eemaldab kÃµikvÃµimaliku Ã¼leliigse tekstist
   function cleanInput($data) {
   	$data = trim($data);
   	$data = stripslashes($data);
   	$data = htmlspecialchars($data);
   	return $data;
   }
-
-  //paneme ühenduse kinni
-	$mysqli->close();
   
 ?>
 <!DOCTYPE html>
@@ -155,7 +138,7 @@
   	<input type="submit" name="create" value="Create user">
   </form>
 
-  <h3> MVP idee on luua kasutaja põhine leht, mis toimib kui online notepad, kus iga kasutaja näeb vaid oma salvestatud teksti ning saab seda igal ajal lugeda ja muuta.</h3>
+  <h3> MVP idee on luua kasutaja pÃµhine leht, mis toimib kui online notepad, kus iga kasutaja nÃ¤eb vaid oma salvestatud teksti ning saab seda igal ajal lugeda ja muuta.</h3>
   
 </body>
 </html>
