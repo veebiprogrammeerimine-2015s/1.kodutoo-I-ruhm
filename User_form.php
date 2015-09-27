@@ -15,14 +15,14 @@
 		//kontrolli ainult siis, kui kasutaja vajutab logi sisse nuppu
 		if($_SERVER["REQUEST_METHOD"] == "POST"){
 			if(empty($_POST["email"]))	{
-				$email_error = "viga";
+				$epost_error = "viga";
 			}	
 			if(empty($_POST["password"])) {
 				$password_error = "Teie parooli lünk on tühi";
 			}else {
 				//parool ei saa olla tühi, kontrollime pikkust
 				if(strlen($_POST["password"]) < 8 ) {
-					$password_error = "Peab olema vähemalt 8 sümbolit pikk";
+					$pass_error = "Peab olema vähemalt 8 sümbolit pikk";
 				}
 				
 			}
@@ -41,7 +41,7 @@
 			}else {
 				//parool ei saa olla tühi, kontrollime pikkust
 				if(strlen($_POST["password"]) < 8 ) {
-					$password_error = "Peab olema vähemalt 8 sümbolit pikk";
+					$pass_error = "Peab olema vähemalt 8 sümbolit pikk";
 				}
 				
 			}
@@ -64,17 +64,17 @@
 		<form action="User_form.php" method="post">
 		
 		<input name="email" type="email" placeholder="E-post">* <?php echo $email_error; ?> <br> <br> 
-		<input name="password" type="password" placeholder="Password">* <?php 
-			echo $password_error; ?> <br> <br> 
-		<input type="submit" value="log in">
+		<input name="password" type="password" placeholder="Password">* <br><br>
+		<input type="submit" value="log in"> 
 		</form>
 		<h2>Sign up</h2>
 		<form action="User_form.php" method="post">
 		
-		<input name="isikukood" type="text" placeholder="personal code">* <?php echo $id_error; ?> <br> <br> 
+		<input name="code" type="text" placeholder="personal code">* <?php echo $id_error; ?> <br> <br> 
 		<input name="test" type="text" placeholder="age"> <br> <br>
 		<input name="create_email" type="text" placeholder="Email">* <?php echo $email_error; ?> <br> <br> 
-		<input name="create_password" type="text" placeholder="Password">* <br> <br>
+		<input name="create_password" type="text" placeholder="Password"><?php echo $password_error; ?> <br> <br> 
+		
 		
 		Gender:
 		<input type="radio" name="gender"
