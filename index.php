@@ -1,37 +1,34 @@
 <?php
-session_start();
 	require_once("session_file.php");
 	
-	if (isset ($_POST['email'])){
-		$_SESSION['email']=$_POST['email']
-	}
-	if (isset ($_POST['email'])){
-		$_SESSION['password']=$_POST['password']
-	}
-
-include('new_user.php');
-include('page.css');
-
 ?>
 <html>
 
 <head>
-<title>Kodutöö</title>
+	<title>Test site</title>
+	<link rel="stylesheet" type="text/css" href="page.css">
+
+
 </head>
 
-<body>
-<h2>Create User</h2>
-	<form action="" method "post">
-		<input name="email" type="email" placeholder="Email"/>* 
-			<?php echo $email_error; ?>
-		<br>
-		<input name="password" type="password" placeholder="Password"/>*
-			<?php echo $password_error; ?>
-		<br>
-		<input type="submit" value="Create user">
-	</form>
 
+<body>
+<div id="header">
+Test site.
+</div>
+
+<div id="create">
+	<p>Create new user</p>
+	<form method="post" action="new_user.php">
+		<input type="email" name="username" placeholder="E-mail"><br>
+		<input type="password" name="password" placeholder="Password"><br>
+		<input type="submit">
+	</form>
+</div>
+
+<div id="login">
+		
+</div>
 
 </body>
-
 </html>
