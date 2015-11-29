@@ -1,1 +1,10 @@
 Minu MVP ideeks oleks võimlemise ja erinevate spordiharjutuste teemaline lehekülg. Kuhu kasutajad saavad lisada erinevaid harjutusi ja teiste lisatud harjutsui vaadata. 
+
+1) Andmed - ehk teeme tabeli (1 võiks piisada) ja seal tabelis on siis kõik andmed kirjas. + tabel tuleb lisada ka kodusetöö juurde
+2) Sisseloginud kasutaja saab andmeid lisada ja muuta 
+3) Kas andmeid vaadata saavad kõik vaadata või mitte (saab ainulöt sisse logitud kasutaja vaadata)
+4) Otsing nagu tegime tunnis (otsib mitmest tulbast eazy e)
+
+
+Tabel - id
+		
