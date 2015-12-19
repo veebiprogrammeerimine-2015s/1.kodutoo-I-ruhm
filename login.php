@@ -3,14 +3,26 @@
   // muuutujad errorite jaoks
 	$email_error = "";
 	$password_error = "";
+	$firstname_error = "";
+	$lastname_error = "";
 	$create_email_error = "";
 	$create_password_error = "";
+	$create_firstname_error = "";
+	$create_lastname_error = "";
 
+<<<<<<< HEAD
+  // muutujad v?tuste jaoks
+=======
   // muutujad väärtuste jaoks
+>>>>>>> 33d792229df765733402221f237850c3a828fe69
 	$email = "";
 	$password = "";
+	$firstname = "";
+	$lastname = "";
 	$create_email = "";
 	$create_password = "";
+	$create_firstname = "";
+	$create_lastname = "";
 
 
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -32,6 +44,10 @@
 			}else{
 				$password = cleanInput($_POST["password"]);
 			}
+<<<<<<< HEAD
+		}
+	
+=======
 
       // Kui oleme siia jõudnud, võime kasutaja sisse logida
 			if($password_error == "" && $email_error == ""){
@@ -61,6 +77,7 @@
 			}
 
 		} // login if end
+>>>>>>> 33d792229df765733402221f237850c3a828fe69
 
     // *********************
     // ** LOO KASUTAJA *****
@@ -68,7 +85,11 @@
     if(isset($_POST["create"])){
 
 			if ( empty($_POST["create_email"]) ) {
+<<<<<<< HEAD
+				$create_email_error = "See vli on kohustuslik";
+=======
 				$create_email_error = "See väli on kohustuslik";
+>>>>>>> 33d792229df765733402221f237850c3a828fe69
 			}else{
 				$create_email = cleanInput($_POST["create_email"]);
 			}
@@ -82,6 +103,23 @@
 					$create_password = cleanInput($_POST["create_password"]);
 				}
 			}
+<<<<<<< HEAD
+			
+			if ( empty($_POST["create_firstname"]) ) {
+				$create_firstname_error = "See v�li on kohustuslik";
+			}else{
+				$create_firstname = cleanInput($_POST["create_firstname"]);
+			}
+
+			if ( empty($_POST["create_lastname"]) ) {
+				$create_lastname_error = "See v�li on kohustuslik";
+			}else{
+				$create_lastname = cleanInput($_POST["create_lastname"]);
+			}
+			
+			if(	$create_email_error == "" && $create_password_error == ""){
+				echo "V�ib kasutajat luua! Kasutajanimi on ".$create_email." ja parool on " .hash("sha512", $create_password);
+=======
 
 			if(	$create_email_error == "" && $create_password_error == ""){
 				echo hash("sha512", $create_password);
@@ -101,21 +139,32 @@
 			  //käivitab sisestuse
 				$stmt->execute();
 				$stmt->close();
+>>>>>>> 33d792229df765733402221f237850c3a828fe69
 			
 			}
 
-		} // create if end
-
+		} 
+		
 	}
+<<<<<<< HEAD
+		
+	function cleanInput($data) {
+=======
 
   // funktsioon, mis eemaldab kõikvõimaliku üleliigse tekstist
   function cleanInput($data) {
+>>>>>>> 33d792229df765733402221f237850c3a828fe69
   	$data = trim($data);
   	$data = stripslashes($data);
   	$data = htmlspecialchars($data);
   	return $data;
+<<<<<<< HEAD
+	}
+
+=======
   }
   
+>>>>>>> 33d792229df765733402221f237850c3a828fe69
 ?>
 <!DOCTYPE html>
 <html>
@@ -135,6 +184,8 @@
   <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" >
   	<input name="create_email" type="email" placeholder="E-post" value="<?php echo $create_email; ?>"> <?php echo $create_email_error; ?><br><br>
   	<input name="create_password" type="password" placeholder="Parool"> <?php echo $create_password_error; ?> <br><br>
+  	<input name="create_firstname" type="firstname" placeholder="Eesnimi"> <?php echo $create_firstname_error; ?> <br><br>
+  	<input name="create_lastname" type="lastname" placeholder="Perekonnanimi"> <?php echo $create_lastname_error; ?> <br><br>
   	<input type="submit" name="create" value="Create user">
   </form>
 
