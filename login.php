@@ -106,20 +106,17 @@
 <<<<<<< HEAD
 			
 			if ( empty($_POST["create_firstname"]) ) {
-				$create_firstname_error = "See väli on kohustuslik";
+				$create_firstname_error = "See vÃ¤li on kohustuslik";
 			}else{
 				$create_firstname = cleanInput($_POST["create_firstname"]);
 			}
 
 			if ( empty($_POST["create_lastname"]) ) {
-				$create_lastname_error = "See väli on kohustuslik";
+				$create_lastname_error = "See vÃ¤li on kohustuslik";
 			}else{
 				$create_lastname = cleanInput($_POST["create_lastname"]);
 			}
 			
-			if(	$create_email_error == "" && $create_password_error == ""){
-				echo "Võib kasutajat luua! Kasutajanimi on ".$create_email." ja parool on " .hash("sha512", $create_password);
-=======
 
 			if(	$create_email_error == "" && $create_password_error == ""){
 				echo hash("sha512", $create_password);
