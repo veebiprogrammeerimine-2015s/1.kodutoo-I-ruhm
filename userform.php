@@ -62,4 +62,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
 	
 	</body>
+     MVP IDEE - Note taker. Saab oma postitusi kirja panna ja ise näha. Alguseks kõik ning edasiseks saab äkki joonistada, due date, kategooriad etc?
 </html> 
