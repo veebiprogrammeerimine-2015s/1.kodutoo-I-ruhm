@@ -222,7 +222,33 @@ class user_manage
         }
         return $array;
     }
-}
+	function editUser($userfirstname, $userlastname, $useraddress, $logged_uid){
+		$response = new StdClass();
+		$stmt = $this->connection->prepare("UPDATE userbase SET first_name=?, last_name=?, address=? WHERE id=?");
+		$stmt->bind_param("ssss", $userfirstname, $userlastname, $useraddress, $logged_uid);
+		if($stmt->execute()){
+
+            $success = new StdClass();
+            $success->message = "andmed lisatud";
+
+            $response->success = $success;
+            header("Location: new_user.php");
+
+
+        } else {
+            #echo($stmt->error);
+            $error = new StdClass();
+            $error->id = 1;
+            $error->message = "Hiireke läks katki";
+            $response->error = $error;
+
+        }
+        $stmt->close();
+
+        return $response;
+		
+	}
+	}
 
 
 ?>
