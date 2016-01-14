@@ -1,3 +1,8 @@
 Minu idee oleks luua söögiteemaline veebileht,
 kus inimesed saavad postitada retsepte, teiste omasid kommenteerida
 ja nõu anda
+
+1) Andmed - teeme tabeli  ja seal tabelis on kõik kirjas -> tabel tuleb lisada kodutöö juurde
+2) Kõik saavad vaadata  / Sisseloginud kasutaja saab andmeid lisada ja muuta(võib ka koos approvaliga) 
+3) Otsing nagu tegime tunnis (otsib mitmest tulbast)
+
