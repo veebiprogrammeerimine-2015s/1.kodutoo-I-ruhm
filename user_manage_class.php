@@ -90,7 +90,7 @@ class user_manage
             $success->message = "Kasutaja edukalt loodud";
 
             $response->success = $success;
-            header("Location: /index2.php");
+            header("Location: index.php");
 
 
         } else {

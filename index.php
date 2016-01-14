@@ -53,17 +53,20 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 $_SESSION['logged_in_uid'] = $response->success->user->id;
 $_SESSION['logged_in_username'] = $response->success->user->username;
 if(isset($_SESSION['logged_in_uid'])){
-    header("Location: new_user.php");
+    header("Location: /1.kodutoo-I-ruhm/new_user.php");
 }
 ?>
 <!DOCTYPE html>
 <html lang="et"">
 <head>
+
     <meta charset="utf-8">
     <title>Smth Smth</title>
     <link rel="stylesheet" type="text/css" href="page.css" />
 </head>
 <body>
+
+
 
     <div class="main">
         <div class="block"">

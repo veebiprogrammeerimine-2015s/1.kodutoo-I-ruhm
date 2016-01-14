@@ -3,9 +3,9 @@
 	$page_file_name = "userpage.php";
 	require_once(__DIR__."/functions.php");
 	require_once(__DIR__."/user_manage_class.php");
-	if(is_null($_SESSION['logged_in_user_id'])){
+	if(is_null($_SESSION['logged_in_uid'])){
 		session_destroy();
-		header("Location: /index.php");
+		header("Location:index.php");
 	}
 	$user_manage = new user_manage($connection);
 
@@ -41,6 +41,7 @@
 	<head>
 	<link rel="stylesheet" type="text/css" href="page.css" />
 	</head>
+	
 	
 				<h2>Kasutaja muutmine</h2><br><br>
 				<form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
